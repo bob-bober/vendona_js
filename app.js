@@ -1,8 +1,8 @@
-/* "use strict";
+"use strict";
 
 window.Webflow = window.Webflow || [];
 window.Webflow.push(() => {
-  
+ 
 
 // scroll-animation feature-section
 gsap.utils.toArray(".feature-txt-wrapper").forEach((el) => {
@@ -53,6 +53,6 @@ imagesLoaded(document.querySelector("body"), () => {
 
 });
 
- */
+
 
 console.log("klappt das jetzt oder wie? ")
