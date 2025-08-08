@@ -1,8 +1,38 @@
 "use strict";
 
+
+
+
+
 window.Webflow = window.Webflow || [];
 window.Webflow.push(() => {
 
+/* navbar */
+function initNavbar() {
+
+  //navbar-show-hide-animation 
+  const navbar = document.getElementById("navbar");
+  let lastScrollY = window.scrollY;
+  const scrollThreshold = 10;
+
+  window.addEventListener("scroll", function() {
+    const currentScrollY = window.scrollY;
+    let scrollDif = Math.abs(currentScrollY - lastScrollY);
+
+    if(scrollDif < scrollThreshold) {
+      return
+    };
+
+    if(currentScrollY > lastScrollY) {
+      gsap.to(navbar, {y: -200, opacity: 0, duration: 0.5});
+    } else {
+      gsap.to(navbar, {y: 0, opacity: 1, duration: 0.2});
+    };
+
+    lastScrollY = currentScrollY; 
+})
+
+}
 
 /* btns */
 function initBtnHovers() {
@@ -190,6 +220,7 @@ function initFinalCta() {
 }
 
 /* init-function-call */
+initNavbar()
 initBtnHovers()
 initMainFeatureSection()
 initFeatureSection()
